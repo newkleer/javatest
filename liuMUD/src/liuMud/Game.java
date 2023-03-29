@@ -9,7 +9,7 @@ public class Game {
 
     JFrame window;
     Container con;
-    JPanel titleNamePanel, startButtonPanel, mainTextPanel;
+    JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel;
     JLabel titleNameLabel;
     Font titleFont = new Font("Courier", Font.PLAIN, 40);
     Font normalFont = new Font("Times New Roman", Font.PLAIN, 40);
@@ -28,7 +28,7 @@ public class Game {
     }
     public Game() {
 
-        JFrame window = new JFrame();
+        window = new JFrame();
         window.setSize(800, 600);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.getContentPane().setBackground(Color.black);
@@ -39,6 +39,7 @@ public class Game {
         titleNamePanel= new JPanel();
         titleNamePanel.setBounds(100, 100, 600, 150);
         titleNamePanel.setBackground(Color.black);
+
         titleNameLabel = new JLabel("liuMUD");
         titleNameLabel.setForeground(Color.white);
         titleNameLabel.setFont(titleFont);
@@ -49,6 +50,7 @@ public class Game {
 
         startButton = new JButton("START");
         startButton.setBounds(300, 400, 200, 100);
+        startButton.setText("START");
         startButton.setBackground(Color.black);
         startButton.setForeground(Color.white);
         startButton.setFont(normalFont);
@@ -63,9 +65,14 @@ public class Game {
 
 
 
+
     }
 
     public void createGameScreen(){
+
+        titleNamePanel.setVisible(false);
+        startButtonPanel.setVisible(false);
+        startButton.setVisible(false);
 
         mainTextPanel = new JPanel();
         mainTextPanel.setBounds(100, 100, 600, 250);
@@ -73,7 +80,7 @@ public class Game {
         con.add(mainTextPanel);
         con.repaint();
 
-        mainTextArea = new JTextArea();
+        mainTextArea = new JTextArea("This is the main text area, it is going to be great, I'm sure of it!");
         mainTextArea.setBounds(100, 100, 600, 250);
         mainTextArea.setBackground(Color.black);
         mainTextArea.setForeground(Color.white);
